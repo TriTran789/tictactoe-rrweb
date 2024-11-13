@@ -11,3 +11,8 @@ export const getRecords = async () => {
   const records = await Record.find({});
   return records;
 };
+
+export const getRecord = async (recordId: string) => {
+  const record = await Record.findById(recordId);
+  return record;
+};
