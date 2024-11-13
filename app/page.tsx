@@ -195,7 +195,7 @@ const App: React.FC = () => {
   }, [turn, board, playing, bestMove]);
 
   const handleRecord = () => {
-    let rrwebHandler = rrweb.record({
+    const rrwebHandler = rrweb.record({
       emit(event) {
         setEvents((events: any) => [...events, event]);
       },
