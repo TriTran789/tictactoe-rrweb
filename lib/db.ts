@@ -23,7 +23,7 @@ const cached: MongooseCache = global.mongooseCache || {
   promise: null,
 };
 
-async function dbConnect(): Promise<Mongoose> {k
+async function dbConnect(): Promise<Mongoose> {
   if (cached.conn) {
     return cached.conn;
   }
