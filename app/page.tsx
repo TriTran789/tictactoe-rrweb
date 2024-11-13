@@ -319,7 +319,7 @@ const App: React.FC = () => {
                     key={index}
                     onClick={() => {
                       if (cell == 0 && playing && turn == -1) {
-                        let newBoard = board.slice();
+                        const newBoard = board.slice();
                         newBoard[index] = -1;
                         setBoard(newBoard);
                         setTurn(1);
