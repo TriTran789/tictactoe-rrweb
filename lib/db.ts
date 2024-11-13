@@ -23,7 +23,7 @@ const cached: MongooseCache = global.mongooseCache || {
   promise: null,
 };
 
-async function dbConnect(): Promise<Mongoose> {
+async function dbConnect(): Promise<Mongoose> {k
   if (cached.conn) {
     return cached.conn;
   }
@@ -31,8 +31,8 @@ async function dbConnect(): Promise<Mongoose> {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      connectTimeoutMS: 20000, // 20 giây
-      socketTimeoutMS: 45000, // 45 giây
+      connectTimeoutMS: 100000, // 20 giây
+      socketTimeoutMS: 100000, // 45 giây
     };
     cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
       console.log("Db connected");
