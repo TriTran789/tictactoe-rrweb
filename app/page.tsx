@@ -1,4 +1,5 @@
 "use client";
+import { addRecord } from "@/actions/record";
 import { History } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
@@ -368,6 +369,7 @@ const App: React.FC = () => {
                   onClick={ async () => {
                     setStep(0);
                     handleStop();
+                    addRecord(events);
                     setEvents([]);
                   }}
                 >
