@@ -12,11 +12,13 @@ export const addRecord = async (record: object[]) => {
 export const getRecords = async () => {
   await dbConnect();
   const records = await Record.find({});
+  console.log(records);
   return records;
 };
 
 export const getRecord = async (recordId: string) => {
   await dbConnect();
   const record = await Record.findById(recordId);
+  console.log(record);
   return record;
 };
