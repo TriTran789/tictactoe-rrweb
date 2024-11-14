@@ -10,7 +10,7 @@ const page = async ({ params }: { params: { recordId: string } }) => {
   const events = record?.data as eventWithTime[];
 
   return (
-    <div className="p-12 pt-32 relative w-full h-screen">
+    <div className="p-12 pt-24 relative w-full h-screen">
       <Link
         href={"/history"}
         className="top-10 left-10 size-12 flex justify-center items-center bg-white absolute rounded-full hover:bg-white/80 cursor-pointer"
