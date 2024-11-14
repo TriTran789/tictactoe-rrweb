@@ -22,7 +22,22 @@ const Player = ({ events }: { events: eventWithTime[] }) => {
     return <p>Loading...</p>;
   }
   console.log("wrapper", wrapper.current);
-  return <div ref={wrapper} className="flex flex-col items-center" />;
+  return (
+    <div id="player" ref={wrapper} className="flex flex-col items-center">
+      <style>
+        {`
+          #player .rr-player {
+            background-color: transparent;
+            border-width: 2px;
+          }
+
+          #player .rr-controller {
+            background-color: #324773;
+          }
+        `}
+      </style>
+    </div>
+  );
 };
 
 export default Player;
