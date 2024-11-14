@@ -12,12 +12,12 @@ const recordSchema: Schema<RecordDocument> = new mongoose.Schema(
       type: [Schema.Types.Mixed],
       required: true,
     },
-    
   },
-  { timestamps: true } // Enable timestamps
+  { timestamps: true, bufferCommands: false } // Enable timestamps
 );
 
 const Record: Model<RecordDocument> =
-  mongoose.models.Record || mongoose.model<RecordDocument>("Record", recordSchema);
+  mongoose.models.Record ||
+  mongoose.model<RecordDocument>("Record", recordSchema);
 
 export default Record;
