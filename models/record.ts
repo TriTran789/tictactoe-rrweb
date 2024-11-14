@@ -13,7 +13,7 @@ const recordSchema: Schema<RecordDocument> = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true, bufferCommands: false } // Enable timestamps
+  { timestamps: true } // Enable timestamps
 );
 
 const Record: Model<RecordDocument> =

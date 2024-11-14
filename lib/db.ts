@@ -30,7 +30,7 @@ async function dbConnect(): Promise<Mongoose> {
 
   if (!cached.promise) {
     const opts = {
-      bufferCommands: true,
+      // bufferCommands: true,
       // connectTimeoutMS: 100000, // 20 giây
       // socketTimeoutMS: 100000, // 45 giây
       serverSelectionTimeoutMS: 5000, // 5 giây
