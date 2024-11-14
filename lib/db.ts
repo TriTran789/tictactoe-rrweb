@@ -29,13 +29,13 @@ async function dbConnect(): Promise<Mongoose> {
   }
 
   if (!cached.promise) {
-    const opts = {
-      // bufferCommands: true,
-      // connectTimeoutMS: 100000, // 20 giây
-      // socketTimeoutMS: 100000, // 45 giây
-      serverSelectionTimeoutMS: 5000, // 5 giây
-    };
-    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+    // const opts = {
+    //   // bufferCommands: true,
+    //   // connectTimeoutMS: 100000, // 20 giây
+    //   // socketTimeoutMS: 100000, // 45 giây
+    //   // serverSelectionTimeoutMS: 5000, // 5 giây
+    // };
+    cached.promise = mongoose.connect(MONGODB_URI!).then((mongoose) => {
       console.log("Db connected");
       return mongoose;
     });
