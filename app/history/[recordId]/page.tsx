@@ -1,25 +1,13 @@
 import { getRecord } from "@/actions/record";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import { eventWithTime } from "@rrweb/types";
-import rrwebPlayer from "rrweb-player";
 import Player from "@/components/Player";
 
 const page = async ({ params }: { params: { recordId: string } }) => {
   const record = await getRecord(params.recordId);
   const events = record?.data as eventWithTime[];
-
-  // useEffect(() => {
-  //   if (events.length > 1) {
-  //     new rrwebPlayer({
-  //       target: document.getElementById("player") as HTMLElement,
-  //       props: {
-  //         events: events,
-  //       },
-  //     });
-  //   }
-  // }, [record]);
 
   return (
     <div className="p-12 pt-32 relative w-full h-screen">
