@@ -1,3 +1,4 @@
+"use client";
 import { getRecords } from "@/actions/record";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
