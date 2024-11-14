@@ -1,5 +1,6 @@
 "use server";
 
+import dbConnect from "@/lib/db";
 import Record from "@/models/record";
 
 export const addRecord = async (record: object[]) => {
@@ -8,6 +9,7 @@ export const addRecord = async (record: object[]) => {
 };
 
 export const getRecords = async () => {
+  await dbConnect();
   const records = await Record.find({});
   return records;
 };
